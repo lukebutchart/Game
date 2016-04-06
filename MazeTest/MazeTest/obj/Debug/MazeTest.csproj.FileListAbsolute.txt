@@ -1,0 +1,6 @@
+c:\users\luke.butchart\documents\visual studio 2015\Projects\MazeTest\MazeTest\bin\Debug\MazeTest.exe.config
+c:\users\luke.butchart\documents\visual studio 2015\Projects\MazeTest\MazeTest\bin\Debug\MazeTest.exe
+c:\users\luke.butchart\documents\visual studio 2015\Projects\MazeTest\MazeTest\bin\Debug\MazeTest.pdb
+c:\users\luke.butchart\documents\visual studio 2015\Projects\MazeTest\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache
+c:\users\luke.butchart\documents\visual studio 2015\Projects\MazeTest\MazeTest\obj\Debug\MazeTest.exe
+c:\users\luke.butchart\documents\visual studio 2015\Projects\MazeTest\MazeTest\obj\Debug\MazeTest.pdb

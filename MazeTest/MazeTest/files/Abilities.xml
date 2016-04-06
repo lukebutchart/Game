@@ -1,0 +1,15 @@
+<ability name="freeze">
+  <int name="cost">100</int>
+  <int name="level">6</int>
+  <effect type="DamageEffect">
+    <int name="amount">100</int>
+    <string name="type">ICE</string>
+  </effect>
+  <effect type="StatusEffect">
+    <string name="type">STASIS</string>
+    <int name="time">10</int>
+  </effect>
+  <effect type="ParticleEffect">
+    <string name="particleSystemTemplate">frost_particles.vfx</string>
+  </effect>
+</ability>

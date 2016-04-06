@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file has been edited.-->
+<Abilities>
+  <Ability ID="1" Name="Freeze">
+    <DamageEffect>Ice</DamageEffect>
+    <StatusEffect>Freeze</StatusEffect>
+    <Stats Level="1" Cost="100" Power="6" />
+    <Stats Level="2" Cost="110" Power="8" />
+    <Stats Level="3" Cost="120" Power="10" />
+    <Stats Level="4" Cost="130" Power="12" />
+    <Stats Level="5" Cost="140" Power="14" />
+  </Ability>
+  <Ability ID="2" Name="Fireball">
+    <DamageEffect>Fire</DamageEffect>
+    <StatusEffect>Burn</StatusEffect>
+    <Stats Level="1" Cost="100" Power="6" />
+    <Stats Level="2" Cost="110" Power="8" />
+    <Stats Level="3" Cost="120" Power="10" />
+    <Stats Level="4" Cost="130" Power="12" />
+    <Stats Level="5" Cost="140" Power="14" />
+  </Ability>
+  <Ability ID="3" Name="Shock">
+    <DamageEffect>Electricity</DamageEffect>
+    <StatusEffect>Shock</StatusEffect>
+    <Stats Level="1" Cost="80" Power="5" />
+    <Stats Level="2" Cost="90" Power="6" />
+    <Stats Level="3" Cost="100" Power="8" />
+    <Stats Level="4" Cost="110" Power="9" />
+    <Stats Level="5" Cost="120" Power="11" />
+  </Ability>
+  <Ability ID="4" Name="Blizzard">
+    <DamageEffect>Ice</DamageEffect>
+    <StatusEffect>Freeze</StatusEffect>
+    <Stats Level="1" Cost="150" Power="10" />
+    <Stats Level="2" Cost="170" Power="13" />
+    <Stats Level="3" Cost="190" Power="16" />
+    <Stats Level="4" Cost="210" Power="19" />
+    <Stats Level="5" Cost="230" Power="22" />
+  </Ability>
+</Abilities>
