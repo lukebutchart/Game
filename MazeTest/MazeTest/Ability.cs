@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game
+namespace MazeTest
 {
     class Ability
     {
@@ -16,14 +16,15 @@ namespace Game
         public int Cost { get; set; }
         public int Power { get; set; }
         public bool Existence { get; set; } = false;
+        public int MaxLevel { get; set; }
 
 
         public Ability GetNewAbility(string abilityName, int abilityLevel)
         {
-            AbilitiesXML abilitiesXML = new AbilitiesXML();
+            XMLClass abilitiesXML = new XMLClass();
             Ability ability = new Ability();
 
-            ability = abilitiesXML.XMLReadReturn(abilityName, abilityLevel);
+            ability = abilitiesXML.XMLReadAbilitiesReturn(abilityName, abilityLevel);
 
             if (ability.Name != null && ability.DamageEffect != null && ability.Level != 0)
             {

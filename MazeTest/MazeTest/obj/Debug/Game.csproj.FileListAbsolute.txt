@@ -3,3 +3,9 @@ C:\Users\luke.butchart\Documents\Visual Studio 2015\Projects\MazeTest\MazeTest\b
 C:\Users\luke.butchart\Documents\Visual Studio 2015\Projects\MazeTest\MazeTest\bin\Debug\MazeTest.pdb
 C:\Users\luke.butchart\Documents\Visual Studio 2015\Projects\MazeTest\MazeTest\obj\Debug\MazeTest.exe
 C:\Users\luke.butchart\Documents\Visual Studio 2015\Projects\MazeTest\MazeTest\obj\Debug\MazeTest.pdb
+C:\Users\luke.butchart\Documents\_Test Repository\MazeTest\MazeTest\bin\Debug\MazeTest.exe.config
+C:\Users\luke.butchart\Documents\_Test Repository\MazeTest\MazeTest\obj\Debug\MazeTest.exe
+C:\Users\luke.butchart\Documents\_Test Repository\MazeTest\MazeTest\obj\Debug\MazeTest.pdb
+C:\Users\luke.butchart\Documents\_Test Repository\MazeTest\MazeTest\bin\Debug\MazeTest.exe
+C:\Users\luke.butchart\Documents\_Test Repository\MazeTest\MazeTest\bin\Debug\MazeTest.pdb
+C:\Users\luke.butchart\Documents\_Test Repository\MazeTest\MazeTest\obj\Debug\Game.csprojResolveAssemblyReference.cache

@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using System.Data;
 
-namespace Game
+namespace MazeTest
 {
     internal class PersonGenerator
     {
-        /// <summary>
-        /// The variance for each stat when rolling.
-        /// </summary>
-        public int statRollVariance = 5;
+        ///// <summary>
+        ///// The variance for each stat when rolling.
+        ///// </summary>
+        //public int statRollVariance = 5;
 
-        /// <summary>
-        /// The base value for each Special.
-        /// </summary>
-        public int specialBase = 3;
+        ///// <summary>
+        ///// The base value for each Special.
+        ///// </summary>
+        //public int specialBase = 3;
 
-        /// <summary>
-        /// The variance for each Special when rolling.
-        /// </summary>
-        public int specialRollVariance = 2;
+        ///// <summary>
+        ///// The variance for each Special when rolling.
+        ///// </summary>
+        //public int specialRollVariance = 2;
 
-        public void Run()
+        public void Run(Data data)
         {
             Rand rand = new Rand();
             List<int> randomSeed = rand.GenerateRandomList(100, 100);
@@ -29,29 +29,31 @@ namespace Game
             Person person = new Person();
             Person person1 = new Person();
 
-            person = InstantiatePerson(rand, randomSeed);
-            ReportPerson(person);
+            person = InstantiatePerson(rand, randomSeed, data);
+            //ReportPerson(person);
 
-            person1 = InstantiatePerson(rand, randomSeed);
-            ReportPerson(person1);
-            
+            person1 = InstantiatePerson(rand, randomSeed, data);
+            //ReportPerson(person1);
+
+            //person.GenerateStats1(person, randomSeed);
+
 
             Console.WriteLine();
         }
 
-        private Person InstantiatePerson(Rand rand, List<int> randomSeed)
+        private Person InstantiatePerson(Rand rand, List<int> randomSeed, Data data)
         {
             Person person = InstantiatePersonProfile(randomSeed);
             rand.RefreshRandomSeed(randomSeed, 9);
-            InstantiatePersonData(person, rand, randomSeed);
+            InstantiatePersonData(person, rand, randomSeed, data);
             return person;
         }
 
-        private static void InstantiatePersonData(Person person1, Rand rand, List<int> randomSeed)
+        private static void InstantiatePersonData(Person person1, Rand rand, List<int> randomSeed, Data data)
         {
-            person1.GenerateStatRoll(person1, randomSeed);
+            person1.GenerateStatRoll(person1, randomSeed, data);
             rand.RefreshRandomSeed(randomSeed, 9);
-            person1.GenerateSpecial(person1, randomSeed);
+            person1.GenerateSpecial(person1, randomSeed, data);
             rand.RefreshRandomSeed(randomSeed, 9);
             person1.GenerateStats(person1, randomSeed);
         }
@@ -115,5 +117,6 @@ namespace Game
 
             return person;
         }
+
     }
 }
