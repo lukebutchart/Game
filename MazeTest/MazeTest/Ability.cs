@@ -80,13 +80,13 @@ namespace MazeTest
         {
             if (ability.Existence)
             {
-                Console.WriteLine("ID    : {0}", ability.ID);
-                Console.WriteLine("RefNam: {0}", ability.RefName);
+                //Console.WriteLine("ID    : {0}", ability.ID);
+                //Console.WriteLine("RefNam: {0}", ability.RefName);
 
                 Console.WriteLine("Name  : {0}", ability.Name);
+                Console.WriteLine("Level : {0}", ability.Level);
                 Console.WriteLine("DamEff: {0}", ability.DamageEffect);
                 Console.WriteLine("StaEff: {0}", ability.StatusEffect);
-                Console.WriteLine("Level : {0}", ability.Level);
                 Console.WriteLine("Cost  : {0}", ability.Cost);
                 Console.WriteLine("Power : {0}", ability.Power);
             }

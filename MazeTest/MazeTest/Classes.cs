@@ -10,9 +10,6 @@ namespace MazeTest
     {
         public string Name { get; set; }
         public string Weapon { get; set; }
-        public List<int> SpecialBonusList { get; set; }
-        public List<int> WeaponProficiencies { get; set; }
-        public List<string> AbilityList { get; set; }
         public bool Existence { get; set; } = false;
         public int Agility { get; set; }
         public int Endurance { get; set; }
@@ -24,12 +21,10 @@ namespace MazeTest
         public int Axe { get; set; }
         public int Staff { get; set; }
         public int Bow { get; set; }
-        public string AbilityName1 { get; set; }
-        public string AbilityName2 { get; set; }
-        public string AbilityName3 { get; set; }
-        public Ability Ability1 { get; set; }
-        public Ability Ability2 { get; set; }
-        public Ability Ability3 { get; set; }
+        //public string AbilityName1 { get; set; }
+        //public string AbilityName2 { get; set; }
+        //public string AbilityName3 { get; set; }
+        public List<Ability> AbilList { get; set; }
 
 
         public Classes GetNewClass(string className, Data data)
@@ -59,12 +54,20 @@ namespace MazeTest
                 @class.Axe = int.Parse(data.GetData(data.Classes, "Axe", classIndex));
                 @class.Staff = int.Parse(data.GetData(data.Classes, "Staff", classIndex));
                 @class.Bow = int.Parse(data.GetData(data.Classes, "Endurance", classIndex));
-                @class.AbilityName1 = data.GetData(data.Classes, "Ability1", classIndex);
-                @class.AbilityName2 = data.GetData(data.Classes, "Ability2", classIndex);
-                @class.AbilityName3 = data.GetData(data.Classes, "Ability3", classIndex);
 
-                //@class.Ability1 = data.Abilities.Columns[0].
+                string abilityName1 = data.GetData(data.Classes, "Ability1", classIndex);
+                string abilityName2 = data.GetData(data.Classes, "Ability2", classIndex);
+                string abilityName3 = data.GetData(data.Classes, "Ability3", classIndex);
 
+                @class.AbilList = new List<Ability>();
+
+                foreach (Ability ability in data.Abilities.AbilityList)
+                {
+                    if ((ability.RefName == abilityName1 || ability.RefName == abilityName2 || ability.RefName == abilityName3) && !@class.AbilList.Contains(ability))
+                    {
+                        @class.AbilList.Add(ability);
+                    }
+                }               
 
                 @class.Existence = true;
 
@@ -75,18 +78,6 @@ namespace MazeTest
                 @class.Existence = false;
                 return null;
             }
-
-
-            //if (@class.Name != null && @class.Weapon != null)
-            //{
-            //    @class.Existence = true;
-            //}
-            //else
-            //{
-            //    @class.Existence = false;
-            //}
-
-            //return @class;
         }
 
         public void ReportClass(Classes @class)
@@ -101,5 +92,11 @@ namespace MazeTest
                 Console.WriteLine("Class does not exist.");
             }
         }
+
+
+        //  DEPRECATED
+        //public List<int> SpecialBonusList { get; set; }
+        //public List<int> WeaponProficiencies { get; set; }
+        //public List<string> AbilityList { get; set; }
     }
 }

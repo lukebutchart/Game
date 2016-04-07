@@ -36,6 +36,8 @@ namespace MazeTest
 
             Abilities.UniqueAbilities = csvClass.GetUniqueColValues(Abilities, "Name");
             Abilities.HighestLevel = 5;
+
+            AbilityGenerator abilityGen = new AbilityGenerator();
         }
 
         public string GetData(Table table, string columnName,int itemIndex = 1)

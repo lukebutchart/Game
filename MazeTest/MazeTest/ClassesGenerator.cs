@@ -25,8 +25,9 @@ namespace MazeTest
             Classes @class = new Classes();
 
             @class = GetClasses("Barbarian", data);
-
+            Console.WriteLine();
             @class.ReportClass(@class);
+            Console.WriteLine();
         }
 
         public void InstantiateClasses(Data data)

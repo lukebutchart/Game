@@ -8,25 +8,6 @@ namespace MazeTest
 {
     class AbilityGenerator
     {
-        ///// <summary>
-        ///// The list of all abilities to be instantiated.
-        ///// </summary>
-        //public List<string> AbilityNameList { get; set; } = new List<string>()
-        //{
-        //    "Freeze",
-        //    "Fireball",
-        //    "Shock",
-        //    "Blizzard",
-        //    "Lightning",
-        //    "Chop",
-        //    "Strike"
-        //};
-        ///// <summary>
-        ///// The highest level of every ability.
-        ///// </summary>
-        //public int HighestAbilityLevel { get; set; } = 5;
-        public List<Ability> AbilityList { get; set; }
-
         public void Run(AbilityGenerator abilityGen, Data data)
         {
             InstantiateAbilities(data);
@@ -71,5 +52,25 @@ namespace MazeTest
                 }                
             }
         }
+
+        //  DEPRACATED
+        //public List<Ability> AbilityList { get; set; }
+        ///// <summary>
+        ///// The list of all abilities to be instantiated.
+        ///// </summary>
+        //public List<string> AbilityNameList { get; set; } = new List<string>()
+        //{
+        //    "Freeze",
+        //    "Fireball",
+        //    "Shock",
+        //    "Blizzard",
+        //    "Lightning",
+        //    "Chop",
+        //    "Strike"
+        //};
+        ///// <summary>
+        ///// The highest level of every ability.
+        ///// </summary>
+        //public int HighestAbilityLevel { get; set; } = 5;
     }
 }

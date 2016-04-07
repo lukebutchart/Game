@@ -345,38 +345,46 @@ namespace MazeTest
                                     reader.Read();
                                 }
 
-                                if (reader.NodeType == XmlNodeType.Element && reader.Name == "Special")
-                                {
-                                    @class.SpecialBonusList = new List<int>();
+                                //----------------
+                                //  DEPRECATED
+                                //----------------
 
-                                    for (int i = 0; i < 6; i++)
-                                    {
-                                        @class.SpecialBonusList.Add(int.Parse(reader.GetAttribute(i)));
-                                    }
-                                    reader.Read();
-                                }
+                                //if (reader.NodeType == XmlNodeType.Element && reader.Name == "Special")
+                                //{
+                                //    @class.SpecialBonusList = new List<int>();
 
-                                if (reader.NodeType == XmlNodeType.Element && reader.Name == "Skill")
-                                {
-                                    @class.WeaponProficiencies = new List<int>();
+                                //    for (int i = 0; i < 6; i++)
+                                //    {
+                                //        @class.SpecialBonusList.Add(int.Parse(reader.GetAttribute(i)));
+                                //    }
+                                //    reader.Read();
+                                //}
 
-                                    for (int i = 0; i < 4; i++)         //NEED TO MAKE THE 4 VARIABLE (the number of possible class weapons)
-                                    {
-                                        @class.WeaponProficiencies.Add(int.Parse(reader.GetAttribute(i)));
-                                    }
-                                    reader.Read();
-                                }
+                                //if (reader.NodeType == XmlNodeType.Element && reader.Name == "Skill")
+                                //{
+                                //    @class.WeaponProficiencies = new List<int>();
 
-                                if (reader.NodeType == XmlNodeType.Element && reader.Name == "Abilities")
-                                {
-                                    @class.AbilityList = new List<string>();
+                                //    for (int i = 0; i < 4; i++)         //NEED TO MAKE THE 4 VARIABLE (the number of possible class weapons)
+                                //    {
+                                //        @class.WeaponProficiencies.Add(int.Parse(reader.GetAttribute(i)));
+                                //    }
+                                //    reader.Read();
+                                //}
 
-                                    for (int i = 0; i < 5; i++)         //NEED TO MAKE THE 5 VARIABLE (the number of possible class abilities)
-                                    {
-                                        @class.AbilityList.Add(reader.GetAttribute(i));
-                                    }
-                                    reader.Read();
-                                }
+                                //if (reader.NodeType == XmlNodeType.Element && reader.Name == "Abilities")
+                                //{
+                                //    @class.AbilityList = new List<string>();
+
+                                //    for (int i = 0; i < 5; i++)         //NEED TO MAKE THE 5 VARIABLE (the number of possible class abilities)
+                                //    {
+                                //        @class.AbilityList.Add(reader.GetAttribute(i));
+                                //    }
+                                //    reader.Read();
+                                //}
+
+                                //----------------
+                                //  DEPRECATED
+                                //----------------
                             }
                         }
                     }

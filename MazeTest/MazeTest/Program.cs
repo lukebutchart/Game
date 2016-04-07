@@ -26,9 +26,11 @@ namespace MazeTest
                 Console.WriteLine();
             }
 
-            data.InstantiateData();
 
-            classesGen.Run(classesGen, data);
+            //abilityGen.Run(abilityGen, data);
+            //classesGen.Run(classesGen, data);
+
+            Initialise(abilityGen, classesGen, data);
 
             Console.WriteLine(@class.Name);
             Console.WriteLine(@class.Weapon);
@@ -38,7 +40,15 @@ namespace MazeTest
             personGen.Run(data);
 
             //instance.Run();            
-            abilityGen.Run(abilityGen, data);            
+        }
+
+        private static void Initialise(AbilityGenerator abilityGen, ClassesGenerator classesGen, Data data)
+        {
+            data.InstantiateData();
+            abilityGen.InstantiateAbilities(data);
+            classesGen.InstantiateClasses(data);
+
+            Console.WriteLine();
         }
     }
 }
