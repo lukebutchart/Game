@@ -12,7 +12,7 @@ namespace MazeTest
     {
         public void Run()
         {
-            XMLReadAbilitiesPrint("Fireball", 3);
+            //XMLReadAbilitiesPrint("Fireball", 3);
         }
 
         /// <summary>

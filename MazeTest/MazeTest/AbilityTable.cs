@@ -8,7 +8,12 @@ namespace MazeTest
 {
     class AbilityTable : Table
     {
+        /// <summary>
+        /// A list of all unique abilities. (does not include column header)
+        /// </summary>
         public List<string> UniqueAbilities { get; set; }
+
+        public List<Ability> AbilityList { get; set; }
 
         public AbilityTable Parse(Table table)
         {

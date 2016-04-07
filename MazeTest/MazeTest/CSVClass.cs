@@ -16,7 +16,7 @@ namespace MazeTest
         /// <param name="extension">The extension of the file.</param>
         /// <param name="directory">The directory of the file.</param>
         /// <returns>A Table object of the given table file.</returns>
-        public Table BuildTableFromCSV(string fileName, string extension = ".csv", string directory = @"C:\Users\luke.butchart\Documents\_Test Repository\MazeTest\MazeTest\bin\Debug\")
+        public Table BuildTableFromCSV(string fileName, string extension = ".csv", string directory = "")
         {
             if (!extension.Contains("."))
             {
@@ -26,6 +26,16 @@ namespace MazeTest
             if (fileName.Contains(extension))
             {
                 extension = "";
+            }
+
+            if (directory == "")
+            {
+                directory = Directory.GetCurrentDirectory() + @"\";
+            }
+
+            if (directory.Last() != '\\')
+            {
+                directory = directory + @"\";
             }
 
             try
@@ -104,6 +114,8 @@ namespace MazeTest
         {
             int colIndex = table.ColumnNames.IndexOf(colName);
 
+            string dir = Directory.GetCurrentDirectory();
+
             List<string> list = new List<string>();
 
             foreach (string item in table.Columns[colIndex].Items)
@@ -113,6 +125,8 @@ namespace MazeTest
                     list.Add(item);
                 }
             }
+
+            list[0] = "";
 
             return list;
         }

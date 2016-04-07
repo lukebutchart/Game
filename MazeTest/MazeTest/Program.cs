@@ -26,9 +26,9 @@ namespace MazeTest
                 Console.WriteLine();
             }
 
-            classesGen.Run(classesGen);
-
             data.InstantiateData();
+
+            classesGen.Run(classesGen, data);
 
             Console.WriteLine(@class.Name);
             Console.WriteLine(@class.Weapon);

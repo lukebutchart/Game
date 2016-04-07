@@ -38,27 +38,31 @@ namespace MazeTest
             Abilities.HighestLevel = 5;
         }
 
-        public string GetData(Table table, string columnName,string itemName = "")
+        public string GetData(Table table, string columnName,int itemIndex = 1)
         {
             string item = "";
             int colIndex = new int();
-            int itemIndex = 1;
-
-            //table.Columns[1].Items[1];
 
             colIndex = table.ColumnNames.IndexOf(columnName);
 
-            if (itemName != "")
-            {
-                itemIndex = table.Columns[colIndex].Items.IndexOf(itemName);
-            }
-
-            if (table.Name == "GenerationNumbers") // CHECK whether  table == GenerationNumbers  works
-            {
+            //if (table.Name == "GenerationNumbers") // CHECK whether  table == GenerationNumbers  works
+            //{
                 item = table.Columns[colIndex].Items[itemIndex];
-            }
+            //}
 
             return item;
+        }
+
+        public int GetIndex(Table table, string columnName, string itemName)
+        {
+            int colIndex = new int();
+            int itemIndex = new int();
+            
+            colIndex = table.ColumnNames.IndexOf(columnName);
+
+            itemIndex = table.Columns[colIndex].Items.IndexOf(itemName);
+
+            return itemIndex;
         }
     }
 }

@@ -18,30 +18,30 @@ namespace MazeTest
 
 
 
-        public void Run(ClassesGenerator classesGen)
+        public void Run(ClassesGenerator classesGen, Data data)
         {
-            InstantiateClasses();
+            InstantiateClasses(data);
 
             Classes @class = new Classes();
 
-            @class = GetClasses("Barbarian");
+            @class = GetClasses("Barbarian", data);
 
             @class.ReportClass(@class);
         }
 
-        public void InstantiateClasses()
+        public void InstantiateClasses(Data data)
         {
             Classes @class = new Classes();
             ClassList = new List<Classes>();
 
             foreach (string className in ClassNameList)
             {
-                @class = @class.GetNewClass(className);
+                @class = @class.GetNewClass(className, data);
                 ClassList.Add(@class);
             }
         }
 
-        public Classes GetClasses(string className)
+        public Classes GetClasses(string className, Data data)
         {
             Classes @class = new Classes();
             
@@ -52,7 +52,7 @@ namespace MazeTest
                     return classCheck;
                 }
             }
-            return @class.GetNewClass(className);
+            return @class.GetNewClass(className, data);
         }
     }
 }
