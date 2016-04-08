@@ -25,27 +25,27 @@ namespace MazeTest
         public List<int> StatRoll { get; set; }
         public List<Ability> AbilityList { get; set; }
 
-        public List<string> maleNames = new List<string>()
-        {
-            "Barry",
-            "Gary",
-            "John",
-            "David"
-        };
+        //public List<string> maleNames = new List<string>()
+        //{
+        //    "Barry",
+        //    "Gary",
+        //    "John",
+        //    "David"
+        //};
 
-        public List<string> femaleNames = new List<string>()
-        {
-            "Mary",
-            "Stephanie",
-            "Hannah",
-            "Rachel"
-        };
+        //public List<string> femaleNames = new List<string>()
+        //{
+        //    "Mary",
+        //    "Stephanie",
+        //    "Hannah",
+        //    "Rachel"
+        //};
 
-        public List<string> genderList = new List<string>()
-        {
-            "M",
-            "F"
-        };
+        //public List<string> genderList = new List<string>()
+        //{
+        //    "M",
+        //    "F"
+        //};
 
         //public List<string> statList = new List<string>()
         //{
@@ -77,95 +77,105 @@ namespace MazeTest
         //    3
         //};
 
-        enum specialEnums       //THESE CANNOT BE EQUAL VALUES. IT WILL BREAK A LOT. MUST BE ALPHABETICAL.
-        {
-            Agility = 3,
-            Endurance = 4,
-            Intelligence = 5,
-            Strength = 6,
-            Vitality = 10,
-            Perception = 15
-        };
+        //enum specialEnums       //THESE CANNOT BE EQUAL VALUES. IT WILL BREAK A LOT. MUST BE ALPHABETICAL.
+        //{
+        //    Agility = 3,
+        //    Endurance = 4,
+        //    Intelligence = 5,
+        //    Strength = 6,
+        //    Vitality = 10,
+        //    Perception = 15
+        //};
 
-        /// <summary>
-        /// Returns the value of an enum at the given index.
-        /// </summary>
-        /// <param name="specialOrStat">Pass string "Special" or "Stat" to specify which enum to look at.</param>
-        /// <param name="index">The index of the enum to look at.</param>
-        /// <returns>The value of the enum in the given position.</returns>
-        public int GetValueFromEnum(string specialOrStat, int index)
-        {
-            int returnValue;
-            string returnName;
+        ///// <summary>
+        ///// Returns the value of an enum at the given index.
+        ///// </summary>
+        ///// <param name="specialOrStat">Pass string "Special" or "Stat" to specify which enum to look at.</param>
+        ///// <param name="index">The index of the enum to look at.</param>
+        ///// <returns>The value of the enum in the given position.</returns>
+        //public int GetValueFromEnum(string specialOrStat, int index, Data data)
+        //{
+        //    int returnValue;
+        //    string returnName;
 
 
-            SecretEnumInformation(specialOrStat, index, out returnValue, out returnName);
+        //    SecretEnumInformation(specialOrStat, index, data, out returnValue, out returnName);
 
-            return returnValue;
-        }
+        //    return returnValue;
+        //}
 
-        /// <summary>
-        /// Returns the name of an enum at the given index.
-        /// </summary>
-        /// <param name="specialOrStat">Pass string "Special" or "Stat" to specify which enum to look at.</param>
-        /// <param name="index">The index of the enum to look at.</param>
-        /// <returns>The name of the enum in the given position.</returns>
-        public string GetNameFromEnum(string specialOrStat, int index)
-        {
-            int returnValue;
-            string returnName;
+        ///// <summary>
+        ///// Returns the name of an enum at the given index.
+        ///// </summary>
+        ///// <param name="specialOrStat">Pass string "Special" or "Stat" to specify which enum to look at.</param>
+        ///// <param name="index">The index of the enum to look at.</param>
+        ///// <returns>The name of the enum in the given position.</returns>
+        //public string GetNameFromEnum(string specialOrStat, int index, Data data)
+        //{
+        //    int returnValue;
+        //    string returnName;
             
 
-            SecretEnumInformation(specialOrStat, index, out returnValue, out returnName);
+        //    SecretEnumInformation(specialOrStat, index, data, out returnValue, out returnName);
 
-            return returnName;
-        }
+        //    return returnName;
+        //}
 
-        private static void SecretEnumInformation(string specialOrStat, int index, out int returnValue, out string returnName)
+        //private static void SecretEnumInformation(string specialOrStat, int index,Data data,  out int returnValue, out string returnName)
+        //{
+        //    string[] nameArray;
+        //    int[] valArray;
+
+        //    if (specialOrStat == "Special" || specialOrStat == "special")
+        //    {
+        //        nameArray = Enum.GetNames(typeof(specialEnums));
+        //        valArray = (int[])Enum.GetValues(typeof(specialEnums));
+        //        returnName = nameArray[index];
+        //        returnValue = valArray[index];
+
+        //        nameArray = data.Special.ColumnNames;
+
+        //        foreach (Column column in data.Special.Columns)
+        //        {
+        //            valArray.Add(column.Items[1]);
+        //        }
+
+
+        //        Console.WriteLine();
+        //    }
+        //    else if (specialOrStat == "Stat" || specialOrStat == "stat" || specialOrStat == "Stats" || specialOrStat == "stats")
+        //    {
+        //        nameArray = Enum.GetNames(typeof(statEnums));
+        //        valArray = (int[])Enum.GetValues(typeof(statEnums));
+        //        returnName = nameArray[index];
+        //        returnValue = valArray[index];
+        //    }
+        //    else
+        //    {
+        //        returnName = "";
+        //        returnValue = 0;
+        //    }
+        //}
+
+        //enum statEnums          //WORK IN PROGRESS   MUST BE ALPHABETICAL.
+        //{
+        //    Attack,
+        //    Defence,
+        //    Health,
+        //    Magic,
+        //    Mana,
+        //    Speed
+        //};
+
+
+        public void GenerateStats(Person person, List<int> randomSeed, Data data)
         {
-            string[] nameArray;
-            int[] valArray;
-
-            if (specialOrStat == "Special" || specialOrStat == "special")
-            {
-                nameArray = Enum.GetNames(typeof(specialEnums));
-                valArray = (int[])Enum.GetValues(typeof(specialEnums));
-                returnName = nameArray[index];
-                returnValue = valArray[index];
-            }
-            else if (specialOrStat == "Stat" || specialOrStat == "stat" || specialOrStat == "Stats" || specialOrStat == "stats")
-            {
-                nameArray = Enum.GetNames(typeof(statEnums));
-                valArray = (int[])Enum.GetValues(typeof(statEnums));
-                returnName = nameArray[index];
-                returnValue = valArray[index];
-            }
-            else
-            {
-                returnName = "";
-                returnValue = 0;
-            }
-        }
-
-        enum statEnums          //WORK IN PROGRESS   MUST BE ALPHABETICAL.
-        {
-            Attack,
-            Defence,
-            Health,
-            Magic,
-            Mana,
-            Speed
-        };
-
-
-        public void GenerateStats(Person person, List<int> randomSeed)
-        {
-            person.Attack = person.Strength * (int)(specialEnums.Strength) + person.StatRoll[(int)statEnums.Attack];
-            person.Defence = person.Endurance * (int)(specialEnums.Endurance) + person.StatRoll[(int)statEnums.Defence];
-            person.Health = person.Vitality * (int)(specialEnums.Vitality) + person.StatRoll[(int)statEnums.Health];
-            person.Magic = person.Intelligence * (int)(specialEnums.Intelligence) + person.StatRoll[(int)statEnums.Magic];
-            person.Mana = person.Perception * (int)(specialEnums.Perception) + person.StatRoll[(int)statEnums.Mana];
-            person.Speed = person.Agility * (int)(specialEnums.Agility) + person.StatRoll[(int)statEnums.Speed];
+            person.Attack = person.Strength * int.Parse(data.GetData(data.Special, "Strength")) + person.StatRoll[data.Stats.ColumnNames.IndexOf("Attack")];
+            person.Defence = person.Endurance * int.Parse(data.GetData(data.Special, "Endurance")) + person.StatRoll[data.Stats.ColumnNames.IndexOf("Defence")];
+            person.Health = person.Vitality * int.Parse(data.GetData(data.Special, "Vitality")) + person.StatRoll[data.Stats.ColumnNames.IndexOf("Health")];
+            person.Magic = person.Intelligence * int.Parse(data.GetData(data.Special, "Intelligence")) + person.StatRoll[data.Stats.ColumnNames.IndexOf("Magic")];
+            person.Mana = person.Perception * int.Parse(data.GetData(data.Special, "Perception")) + person.StatRoll[data.Stats.ColumnNames.IndexOf("Mana")];
+            person.Speed = person.Agility * int.Parse(data.GetData(data.Special, "Agility")) + person.StatRoll[data.Stats.ColumnNames.IndexOf("Speed")];
             Console.WriteLine();
         }
 
@@ -176,7 +186,7 @@ namespace MazeTest
         /// <param name="person">The person to give a new random name.</param>
         /// <param name="clone">If 'true' the person's previous name will not be re-chosen.</param>
         /// <returns>A clone of the input person with a new randomised name.</returns>
-        public void GenerateName(Person person, List<int> randomSeed, bool clone = false)
+        public void GenerateName(Person person, List<int> randomSeed, Data data, bool clone = false)
         {
             List<string> nameList;
             int nameCount;
@@ -185,16 +195,16 @@ namespace MazeTest
 
             if (person.Gender == "M" || person.Gender == "m")
             {
-                nameList = maleNames;
+                nameList = data.Names.MaleNameList;
             }
             else if (person.Gender == "F" || person.Gender == "f")
             {
-                nameList = femaleNames;
+                nameList = data.Names.FemaleNameList;
             }
             else
             {
-                nameList = maleNames;
-                nameList.AddRange(femaleNames);
+                nameList = data.Names.MaleNameList;
+                nameList.AddRange(data.Names.FemaleNameList);
             }
 
             if (clone && person.Name != null)
@@ -209,8 +219,17 @@ namespace MazeTest
             person.Name = name;
         }
 
-        public void GenerateGender(Person person, List<int> randomSeed)
+        public void GenerateGender(Person person, List<int> randomSeed, Data data)
         {
+            //int genderCount = genderList.Count();
+
+            List<string> genderList = data.Names.UniqueGenders;
+
+            if (genderList.Contains(""))
+            {
+                genderList.Remove("");
+            }
+
             int genderCount = genderList.Count();
 
             Rand rand = new Rand();
@@ -249,7 +268,7 @@ namespace MazeTest
                 person.StatRoll = new List<int>();
             }
 
-            for (int i = 0; i < Enum.GetNames(typeof(statEnums)).Length ; i++)
+            for (int i = 0; i < data.Stats.Columns.Count(); i++) //Enum.GetNames(typeof(statEnums)).Length ; i++)
             {
                 if (person.StatRoll.Count <= i)
                 {
@@ -274,14 +293,14 @@ namespace MazeTest
 
         }
 
-        public string[] GiveSpecialList()
-        {
-            return Enum.GetNames(typeof(specialEnums));
-        }
+        //public string[] GiveSpecialList()
+        //{
+        //    return Enum.GetNames(typeof(specialEnums));
+        //}
 
-        public string[] GiveStatList()
-        {
-            return Enum.GetNames(typeof(statEnums));
-        }
+        //public string[] GiveStatList()
+        //{
+        //    return Enum.GetNames(typeof(statEnums));
+        //}
     }
 }

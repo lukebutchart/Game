@@ -19,6 +19,8 @@ namespace MazeTest
             CSVClass csvClass = new CSVClass();
             Classes @class = new Classes();
             Data data = new Data();
+            UI ui = new UI();
+            Logic logic = new Logic();
 
             if (initialCheck.allChecks())
             {
@@ -32,6 +34,8 @@ namespace MazeTest
 
             Initialise(abilityGen, classesGen, data);
 
+            @class = @class.GetNewClass("Barbarian", data);
+
             Console.WriteLine(@class.Name);
             Console.WriteLine(@class.Weapon);
 
@@ -39,7 +43,9 @@ namespace MazeTest
 
             personGen.Run(data);
 
-            //instance.Run();            
+            //instance.Run();
+
+            logic.Run(data, ui);
         }
 
         private static void Initialise(AbilityGenerator abilityGen, ClassesGenerator classesGen, Data data)
@@ -47,8 +53,6 @@ namespace MazeTest
             data.InstantiateData();
             abilityGen.InstantiateAbilities(data);
             classesGen.InstantiateClasses(data);
-
-            Console.WriteLine();
         }
     }
 }

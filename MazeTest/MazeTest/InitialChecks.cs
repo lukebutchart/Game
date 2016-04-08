@@ -36,31 +36,31 @@ namespace MazeTest
         {
             Person person = new Person();
 
-            string[] specialNameList = person.GiveSpecialList();
-            string[] statNameList = person.GiveStatList();
+            //string[] specialNameList = person.GiveSpecialList();
+            //string[] statNameList = person.GiveStatList();
 
-            string specialName;
-            string statName;
+            //string specialName;
+            //string statName;
 
             bool testResult = true;
 
-            for (int i = 0; i < specialNameList.Count(); i++)
-            {
-                specialName = person.GetNameFromEnum("Special", i);
-                if (specialName != specialCheckList[i])
-                {
-                    testResult = false;
-                }
-            }
+            //for (int i = 0; i < specialNameList.Count(); i++)
+            //{
+            //    specialName = person.GetNameFromEnum("Special", i);
+            //    if (specialName != specialCheckList[i])
+            //    {
+            //        testResult = false;
+            //    }
+            //}
 
-            for (int i = 0; i < statNameList.Count(); i++)
-            {
-                statName = person.GetNameFromEnum("Stat", i);
-                if (statName != statCheckList[i])
-                {
-                    testResult = false;
-                }
-            }
+            //for (int i = 0; i < statNameList.Count(); i++)
+            //{
+            //    statName = person.GetNameFromEnum("Stat", i);
+            //    if (statName != statCheckList[i])
+            //    {
+            //        testResult = false;
+            //    }
+            //}
 
             return testResult;
         }

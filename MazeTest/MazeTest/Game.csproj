@@ -52,8 +52,10 @@
     <Compile Include="CSVClass.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="InitialChecks.cs" />
+    <Compile Include="Logic.cs" />
     <Compile Include="Maze.cs" />
     <Compile Include="MazeGenerator.cs" />
+    <Compile Include="NamesTable.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonGenerator.cs" />
     <Compile Include="Program.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Rand.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="Tile.cs" />
+    <Compile Include="UI.cs" />
     <Compile Include="XMLClass.cs" />
   </ItemGroup>
   <ItemGroup>

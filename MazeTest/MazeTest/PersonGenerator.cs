@@ -29,10 +29,10 @@ namespace MazeTest
             Person person = new Person();
             Person person1 = new Person();
 
-            person = InstantiatePerson(rand, randomSeed, data);
+            person = InstantiatePerson(data);
             //ReportPerson(person);
 
-            person1 = InstantiatePerson(rand, randomSeed, data);
+            person1 = InstantiatePerson(data);
             //ReportPerson(person1);
 
             //person.GenerateStats1(person, randomSeed);
@@ -41,11 +41,11 @@ namespace MazeTest
             Console.WriteLine();
         }
 
-        private Person InstantiatePerson(Rand rand, List<int> randomSeed, Data data)
+        public Person InstantiatePerson(Data data, string name = "", string gender = "")
         {
-            Person person = InstantiatePersonProfile(randomSeed);
-            rand.RefreshRandomSeed(randomSeed, 9);
-            InstantiatePersonData(person, rand, randomSeed, data);
+            Person person = InstantiatePersonProfile(data.RandomSeed, data, name, gender);
+            data.RandData.RefreshRandomSeed(data.RandomSeed, 9);
+            InstantiatePersonData(person, data.RandData, data.RandomSeed, data);
             return person;
         }
 
@@ -55,7 +55,8 @@ namespace MazeTest
             rand.RefreshRandomSeed(randomSeed, 9);
             person1.GenerateSpecial(person1, randomSeed, data);
             rand.RefreshRandomSeed(randomSeed, 9);
-            person1.GenerateStats(person1, randomSeed);
+            person1.GenerateStats(person1, randomSeed, data);
+            Console.WriteLine();
         }
 
         private static void ReportPerson(Person person)
@@ -93,13 +94,13 @@ namespace MazeTest
             Console.WriteLine("{1}: {0}", person.Gender, nameof(person.Gender));
         }
 
-        public Person InstantiatePersonProfile(List<int> randomSeed, string name = "", string gender = "")
+        public Person InstantiatePersonProfile(List<int> randomSeed, Data data, string name = "", string gender = "")
         {
             Person person = new Person();
 
             if (gender == "")
             {
-                person.GenerateGender(person, randomSeed);
+                person.GenerateGender(person, randomSeed, data);
             }
             else
             {
@@ -108,7 +109,7 @@ namespace MazeTest
 
             if (name == "")
             {
-                person.GenerateName(person, randomSeed);
+                person.GenerateName(person, randomSeed, data);
             }
             else
             {
